@@ -1,1 +1,11 @@
+sequenceDiagram
+    participant browser
+    participant server
 
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note right of browser: The request comes with the JSON data of the Content and Date
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: CSS file
+    deactivate server
